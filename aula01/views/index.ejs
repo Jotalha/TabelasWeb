@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Cadastro de <%= title %></p>
+    <table>
+      <tr>
+        <td>Marca</td>
+        <td>Modelo</td>
+        <td>Ano</td>
+      </tr>
+      <% for(var i=0; i<carros.length; i++){%>
+        <tr>
+          <td><%=carros[i].marca%></td>
+          <td><%=carros[i].modelo%></td>
+          <td><%=carros[i].ano%></td>
+        </tr>
+       <% } %> 
+    </table>
+    <a href="/cadastroCarro">Cadastrar novo carro</a>
+
+    <h1>Livros</h1>
+    <p>Cadastro de livros</p>
+    <table>
+      <tr>
+        <td>Nome</td>
+        <td>Autor</td>
+        <td>Ano</td>
+      </tr>
+      <% for(var i=0; i<livros.length; i++){%>
+        <tr>
+          <td><%=livros[i].nome%></td>
+          <td><%=livros[i].autor%></td>
+          <td><%=livros[i].ano%></td>
+        </tr>
+      <% }  %> 
+    </table>
+    <a href="/cadastroLivro">Cadastrar novo livro</a>
+
+    <h1>Músicas</h1>
+    <p>Cadastro de músicas</p>
+    <table>
+      <tr>
+        <td>Nome</td>
+        <td>Artista</td>
+        <td>Álbum</td>
+      </tr>
+      <% for(var i=0; i<musicas.length; i++){%>
+        <tr>
+          <td><%=musicas[i].nome%></td>
+          <td><%=musicas[i].artista%></td>
+          <td><%=musicas[i].album%></td>
+        </tr>
+      <% }  %> 
+    </table>
+    <a href="/cadastroMusica">Cadastrar nova música</a>
+  </body>
+</html>
