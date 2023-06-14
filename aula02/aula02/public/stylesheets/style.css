@@ -1,0 +1,17 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+table thead tr {
+  background-color: #CCC;
+}
+
+table tr:hover{
+  cursor: pointer;
+  background-color: #CCC;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <p>
+      <%= customers.length %> clientes cadastrados!
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <td>Nome</td>
+          <td>Idade</td>
+          <td>Região</td>
+          <td>Ações</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% customers.forEach(item=> {
+          %>
+          <tr>
+            <td><a href="/edit/<%=item._id%>" title="Editar"><%=item.nome%></a></td>
+            <td><%=item.idade%></td>
+            <td><%=item.cidade%> - <%= item.uf %></td>
+            <td><a href="/edit/<%=item._id%>" title="Editar">
+              <img src="/images/edit.png"/>
+            </a></td>
+          </tr>
+          <% }) %>
+      </tbody>
+      
+    </table>
+    <a href="/new">Cadastrar novo</a>
+  </body>
+</html>

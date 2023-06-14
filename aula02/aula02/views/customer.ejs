@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title><%= title%></title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+    </head>
+    <body>
+        <h1>
+            <%= title%>
+        </h1>
+        <p>
+            Preencha os campos abaixo para cadastrar um cliente: 
+        </p>
+        <form action="/new" method="POST">
+            <fieldset>
+                <legend>Dados Cadastrais</legend>
+                <p>Nome: <input type="text" name="nome" value="<%= customer.nome %>"></p>
+                <p>Idade: <input type="number" name="idade" value="<%= customer.idade %>"></p>
+                <p>Região: <input type="text" name="cidade" value="<%= customer.cidade %>"></p>
+                <p>
+                    <select id="uf" name="uf">
+                    <option>Selecione um estado:</option>
+                    <option>DF</option>
+                    <option>MG</option>
+                    <option>SP</option>
+                    <option>BA</option>
+                    <option>AL</option>
+                </select>
+                </p>
+                <input type="hidden" name="id"  value="<%= customer._id %>"/>
+                <p>
+                    <input type="submit" value="Confirmar"/>
+                    <a href="/">Cancelar</a>
+                </p>
+            </fieldset>
+        </form>
+        <script>
+            if(window.location.search){
+                const error = window.location.search.split('=')[1];
+                alert(decodeURI(error))
+            }
+            <% 
+            if(customer.uf){
+                %>
+                document.getElementById("uf").value="<%= customer.uf%>";
+                <%
+            }
+            %>
+        </script>
+    </body>
+</html>

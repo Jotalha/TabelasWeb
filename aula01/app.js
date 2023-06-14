@@ -6,9 +6,9 @@ var logger = require("morgan");
 const connection = require("./database/database"); // Importa a conexão com o banco de dados - SEGUNDO PASSO
 
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
 
-var cadastroCarroRouter = require("./routes/cadastroCarro");
+
+var cadastroCarroRouter = require("./routes/CarroController");
 var cadastroLivroRouter = require("./routes/cadastroLivro");
 var cadastroMusicaRouter = require("./routes/MusicaController"); // atualizar o caminho - nono PASSO
 
@@ -25,7 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
+
 
 app.use("/cadastroCarro", cadastroCarroRouter);
 app.use("/cadastroLivro", cadastroLivroRouter);
