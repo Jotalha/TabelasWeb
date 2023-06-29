@@ -29,6 +29,9 @@
             <td><a href="/edit/<%=item._id%>" title="Editar">
               <img src="/images/edit.png"/>
             </a></td>
+            <td><a href="/delete/<%=item._id%>" title="Deletar" onClick="return confirm('Tem certeza que deseja excluir este item?')">
+                <img src="/images/delete.png" />
+              </a></td>
           </tr>
           <% }) %>
       </tbody>

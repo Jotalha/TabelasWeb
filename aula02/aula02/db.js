@@ -1,5 +1,21 @@
 const ObjectId = require("mongodb").ObjectId;
 
+/*const mongoClient = require("mongodb").MongoClient;
+
+function connectDB() {
+  if (!global.connection)
+    mongoClient
+      .connect(process.env.MONGODB_CONNECTION, { useUnifiedTopology: true })
+      .then((connection) => {
+        global.connection = connection.db("aula02");
+        console.log("Connected to MongoDB!");
+      })
+      .catch((error) => {
+        console.log(error);
+        global.connection = null;
+      });
+}*/
+
 async function connectDB() {
   const { MongoClient } = require("mongodb");
 
